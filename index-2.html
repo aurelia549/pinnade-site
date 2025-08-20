@@ -250,95 +250,98 @@
 </section>
 
 <style>
+/* Hero Section */
 .hero {
   position: relative;
-  min-height: 100vh;
-  background: url('assets/img/bbg.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 80px 0;
   overflow: hidden;
+  background: url('assets/img/bbg.jpg') center/cover no-repeat;;
 }
 
-/* Maroon overlay */
-.hero .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(95,58,66,0.9), rgba(95,58,66,0.9));
-  z-index: 1;
+.hero .container {
+  z-index: 3;
+  position: relative;
 }
 
-/* Waves */
-.waves {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200%;
-  height: 200px;
-  background: url("https://svgshare.com/i/12rY.svg") repeat-x;
-  animation: wave 10s linear infinite;
-  opacity: 0.3;
-  z-index: 0;
+/* Welcome Message */
+.hero .welcome {
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-@keyframes wave {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* Text Styling */
-.hero .welcome h1 {
-  font-size: 2.5rem;
+.hero .welcome h3 {
+  font-size: 2rem;
   font-weight: 700;
-}
-.hero .welcome .highlight {
-  color: #FFD166;
-}
-.hero .welcome p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto;
+  color: #5F3A42; /* Maroon theme */
 }
 
-/* Buttons */
-.hero-buttons .btn {
-  font-size: 1rem;
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-.hero-buttons .btn-warning {
-  background-color: #FFD166;
-  border: none;
-  color: #5F3A42;
-}
-.hero-buttons .btn-warning:hover {
-  background-color: #ffb84d;
+.hero .welcome p {
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 600px;
+  margin: 10px auto 0;
 }
 
 /* Program Cards */
 .program-card {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 15px;
+  flex: 1;
+  background: #5F3A42;
+  color: #fff;
+  padding: 25px;
+  border-radius: 12px;
   text-align: center;
-  transition: all 0.3s ease;
-  min-height: 250px; /* adjust as needed */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 250px; /* Equal height desktop */
 }
 
 .program-card i {
   font-size: 2rem;
-  margin-bottom: 10px;
-  color: #FFD166;
+  margin-bottom: 15px;
+  display: block;
+  color: #FFD166; /* Accent color */
 }
+
 .program-card:hover {
-  background: rgba(255,255,255,0.2);
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
+/* Animated Background */
+.animated-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(120deg, rgba(95,58,66,0.1), rgba(95,58,66,0.2));
+  background-size: 200% 200%;
+  animation: moveBg 12s ease-in-out infinite;
+}
+
+@keyframes moveBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero .welcome h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero .welcome p {
+    font-size: 1rem;
+  }
+
+  .program-card {
+    min-height: auto; /* flexible on phones */
+    margin-bottom: 20px;
+  }
+}
+
 </style>
 
 <!-- About Section -->
