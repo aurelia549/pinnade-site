@@ -1714,6 +1714,22 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background: #600000;
 }
+.col-lg-8{
+  position: relative;
+  width: 100%;
+  padding-bottom: 150%; /* adjust depending on form height */
+  height: 0;
+  overflow: hidden;
+}
+
+.col-lg-8 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
 /*--------------------------------------------------------------
 # Starter Section Section
